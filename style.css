@@ -438,10 +438,19 @@ p {
     background-color: #53354a;
 }
 
+.reviews__slider {
+    height: 500px;
+    overflow: hidden;
+}
+
+.reviews__slider.slick-initialized {
+    height: auto;
+}
+
 .reviews__item {
     display: flex;
     flex-wrap: wrap;
-
+    overflow: hidden;
 }
 
 .reviews__photo {
@@ -483,6 +492,50 @@ p {
     line-height: 1.45;
     color: #fff;
     text-transform: uppercase;
+}
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+
+    width: 50%;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.slick-dots li {
+    margin: 0 3px;
+}
+
+.slick-dots button {
+    width: 10px;
+    height: 10px;
+
+    background: #fff;
+    border-radius: 50%;
+    border: none;
+    opacity: 0.5;
+    cursor: pointer;
+
+    padding: 0;
+
+    font-size: 0;
+    color: transparent;
+}
+
+.slick-dots button:focus {
+    outline: 0;
+}
+
+.slick-dots .slick-active button {
+    opacity: 1;
 }
 
 
@@ -588,8 +641,26 @@ p {
     /* Nav */
     .nav {
         display: none;
+        width: 100%;
+        flex-direction: column;
+
+        background-color: #323651;
+        text-align: right;
+
+        position: absolute;
+        top: 100%;
+        right: 0;
     }
 
+    .nav.show {
+        display: flex;
+    }
+
+    .nav__link {
+        margin: 0;
+        padding: 10px 15px;
+    }
+    
 
     /* Burger */
     .burger {
